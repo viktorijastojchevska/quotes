@@ -6,6 +6,7 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
+
 interface Props {
     rows: Array<{
       id: number;
@@ -18,10 +19,10 @@ interface Props {
 
 export function MyTable({ rows }: Props) {
   return (
-    <Paper>
+    <Paper className="display-table">
       <Table>
-        <TableHead>
-          <TableRow>
+        <TableHead className="th">
+          <TableRow className="table-head">
             <TableCell>ID</TableCell>
             <TableCell>Quote</TableCell>
             <TableCell>Author</TableCell>
@@ -30,7 +31,7 @@ export function MyTable({ rows }: Props) {
         </TableHead>
         <TableBody>
           {rows.map(row => (
-            <TableRow key={row.id}>
+            <TableRow className="table-body" key={row.id}>
                 <TableCell>{row.id}</TableCell>
                 <TableCell>{row.text}</TableCell>
                 <TableCell>{row.author}</TableCell>

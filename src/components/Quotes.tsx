@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { MyTable } from "./MyTable";
 import { UUID } from 'uuid-generator-ts';
-import RandomQuote from './RandomQuote';
+
 
 
 const Quotes = () => {
@@ -27,8 +27,8 @@ const Quotes = () => {
                                 // 429 - rate limits
                                 const temp: Quote = {
                                     id: 1,
-                                    author: 'name',
-                                    text: 'name',
+                                    author: 'Nelson Mandela',
+                                    text: 'The greatest glory in living lies not in never falling, but in rising every time we fall',
                                     age: 1
                                 };
                                 return temp;
@@ -54,13 +54,13 @@ const Quotes = () => {
     
 
 return (
-        <div>
-            <div>
+        <div className='table-container'>
+            <div className='table'>
                 <MyTable rows={rows} />
             </div>
             <div>
                 <Link to="/random-quote">
-                    <button onClick={RandomQuote}>Generate Random Quote</button>
+                    <button className='btn btn-first-page'>Generate Random Quote</button>
                 </Link>
             </div>
         </div>
